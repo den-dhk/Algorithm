@@ -21,3 +21,27 @@ for i in range(t):
     for j in result[i]:
         print(j, end=' ')
     print()
+
+
+'''
+# 2회차
+t = int(input())
+n_list = [2,3,5,7,11]
+
+for tc in range(1,t+1):
+    n = int(input())
+    result = []
+    for i in n_list:
+        count = 0
+        while True:
+            if n % i == 0:
+                count += 1
+                n = n // i
+            else:
+                break
+        result.append(count)
+    print(f'#{tc}', end=' ')
+    for i in result:
+        print(i, end=' ')
+    print()
+'''
