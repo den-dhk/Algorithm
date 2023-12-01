@@ -1,9 +1,18 @@
-d = [0] * 100
+answer = []
+number = "4177252841"
+k = 4
+for i in number:
+    if len(answer) == 0:
+        answer.append(i)
+        continue
+    if k > 0:
+        while answer[-1] < i:
+            answer.pop()
+            k -= 1
+            if len(answer) == 0 or k <= 0:
+                break
+    answer.append(i)
 
-def fibo(x):
-    if x == 1 or x == 2:
-        return 1
-    if d[x] != 0:
-        return d[x]
-    d[x] = fibo(x-1) + fibo(x-2)
-    return d[x]
+answer = answer[:-k] if k>0 else answer
+print(answer)
+
